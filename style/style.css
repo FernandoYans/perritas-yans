@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Buhid&display=swap');
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Alumni Sans Pinstripe', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans Buhid', sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-color: #e96acd;
+}
+
+.header h1 {
+  font-family: 'Alumni Sans Pinstripe', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans Buhid', sans-serif;
+  font-weight: 600;
+  padding-right: 50px;
+  font-size: x-large;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: black;
+}
+
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  color: red;
+  text-decoration: underline double;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fdcfcf;
+}
+
+aside h3 p {
+  text-align: center;
+  color: blueviolet;
+}
+
+aside h3 p a:hover {
+  color: blue;
+}
+
+.main {
+  grid-area: main;
+  background-color: white;
+}
+
+main h2 {
+  color: black;
+  text-align: justify;
+  text-decoration: none;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #e96acd;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  100px
+    "navbar"  50px
+    "main"    auto
+    "sidebar" 100px
+    "footer"  80px;
+}
+
+
+
+
+@media (min-width: 480px) {
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "navbar  navbar" 50px
+      "sidebar main"   auto
+      "footer  footer" 100px /
+      200px    auto;
+  }
+
+  .header h1 {
+    font-size: larger;
+  }
+
+  .navbar h2 {
+    font-size: medium;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header  header header"  100px
+      "navbar  main   sidebar" auto
+      "footer  footer footer"  100px /
+      200px    auto   200px;
+  }
+
+  .header h1 {
+    font-size: xx-large;
+  }
+
+  .navbar h2 {
+    font-size: larger;
+  }
+}
